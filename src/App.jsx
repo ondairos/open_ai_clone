@@ -1,15 +1,14 @@
-import { useState } from 'react'
-import './App.css'
-import OptionSelection from './components/OptionSelection'
+import { useState } from "react";
+import "./App.css";
+import OptionSelection from "./components/OptionSelection";
+import { arrayItems } from "./AIOptions";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className="App">
-      <OptionSelection></OptionSelection>
+      <OptionSelection arrayItems={arrayItems}></OptionSelection>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
