@@ -15,14 +15,18 @@ function App() {
 
   const [option, setOption] = useState({});
   const [input, setInput] = useState("");
+  const [result, setResult] = useState("");
   // console.log(import.meta.env.VITE_Open_AI_Key);
   const selectOption = (option) => {
     setOption(option);
   };
 
   // do stuff method set the prompt with input value with every click
-  const doStuff = () => {
-    setOption({ ...option, prompt: input });
+  const doStuff = async () => {
+    let resultObject = { ...option, prompt: input };
+    const response = await openai.createCompletion(resultObject);
+    setResult(response.data.choices[0].text);
+    console.log(result);
   };
 
   return (
@@ -34,7 +38,11 @@ function App() {
           selectOptionProp={selectOption}
         />
       ) : (
-        <Translation doStuffProp={doStuff} setInputProp={setInput} />
+        <Translation
+          doStuffProp={doStuff}
+          setInputProp={setInput}
+          resultProp={result}
+        />
       )}
     </div>
   );
