@@ -3,8 +3,16 @@ import "./App.css";
 import OptionSelection from "./components/OptionSelection";
 import Translation from "./components/Translation";
 import { arrayItems } from "./AIOptions";
+import { Configuration, OpenAIApi } from "openai";
 
 function App() {
+  //open ai configuration
+  const configuration = new Configuration({
+    // import env key with Vite
+    apiKey: import.meta.env.VITE_Open_AI_Key,
+  });
+  const openai = new OpenAIApi(configuration);
+
   const [option, setOption] = useState({});
   const [input, setInput] = useState("");
   // console.log(import.meta.env.VITE_Open_AI_Key);
