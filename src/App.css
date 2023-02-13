@@ -6,7 +6,7 @@
   padding: 2rem;
   text-align: center;
   background-color: rgb(221, 221, 221);
-  font-family: 'Titillium Web', sans-serif;
+  font-family: "Titillium Web", sans-serif;
 }
 
 .grid-main {
@@ -36,10 +36,15 @@
   font-weight: 500;
 }
 
+.heading-div {
+  padding: 1px;
+  border: 2px solid black;
+}
+
 .text-area {
   font-size: 20px;
   width: 100%;
-  font-family: 'Titillium Web', sans-serif;
+  font-family: "Titillium Web", sans-serif;
 }
 
 .actionBtn {
@@ -48,4 +53,11 @@
   font-size: 20px;
   margin-top: 20px;
   cursor: pointer;
+}
+
+.footer-div {
+  margin-top: 50px;
+  padding: 1px;
+  border: 2px solid black;
+  font-size: small;
 }

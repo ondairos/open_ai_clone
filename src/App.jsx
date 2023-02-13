@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import OptionSelection from "./components/OptionSelection";
 import Translation from "./components/Translation";
+import { Footer } from "./components/Footer";
 import { arrayItems } from "./AIOptions";
 import { Configuration, OpenAIApi } from "openai";
 
@@ -33,16 +34,22 @@ function App() {
     <div className="App">
       {/* convert to array */}
       {Object.values(option).length === 0 ? (
-        <OptionSelection
-          arrayItems={arrayItems}
-          selectOptionProp={selectOption}
-        />
+        <>
+          <OptionSelection
+            arrayItems={arrayItems}
+            selectOptionProp={selectOption}
+          />
+          <Footer></Footer>
+        </>
       ) : (
-        <Translation
-          doStuffProp={doStuff}
-          setInputProp={setInput}
-          resultProp={result}
-        />
+        <>
+          <Translation
+            doStuffProp={doStuff}
+            setInputProp={setInput}
+            resultProp={result}
+          />
+          <Footer></Footer>
+        </>
       )}
     </div>
   );
