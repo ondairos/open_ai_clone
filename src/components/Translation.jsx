@@ -1,12 +1,16 @@
-import React from 'react'
+import React from "react";
 
-export default function Translation() {
+export default function Translation({ doStuffProp, setInputProp }) {
   return (
     <div>
-        <p>Translation</p>
-        <textarea className='text-area' cols={80} rows={20}>
-        </textarea>
-        <button className='actionBtn'>Do stuff</button>
+      <p>Translation</p>
+      <textarea
+        className="text-area"
+        cols={50}
+        rows={10}
+        onChange={(event) => setInputProp(event.target.value)}
+      ></textarea>
+      <button className="actionBtn">Chat GPT</button>
     </div>
-  )
+  );
 }
